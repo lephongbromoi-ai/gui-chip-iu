@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thư chuộc tội</title>
+  <style>
+    body {
+      background-color: #ffe6eb;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    img {
+      max-width: 220px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #d63384;
+      font-size: 26px;
+      margin: 10px 20px;
+    }
+
+    p {
+      color: #6c757d;
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    #acceptBtn {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #refuseBtn {
+      background-color: #adb5bd;
+      color: white;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <img id="catImg" src="https://theselfishmeme.co.uk/wp-content/uploads/2025/11/anh-xin-loi-meme-hai-huoc-19.webp"
+    alt="Cat meme" />
+  <h1 id="title">Tớ gửi cái này cho Chíp cụa tớ để cố gắng cải thiện tâm trạng của cậu và ns là</h1>
+  <p>không mong cậu bỏ qua hoàn toàn nhưng mong là cậu vui vẻ khỏe mạnh và không còn lạnh nhạt với tớ nx</p>
+
+  <div class="btn-group">
+    <button id="acceptBtn" onclick="accept()">Chíp sẽ cười thật to</button>
+    <button id="refuseBtn" onmouseover="dodge()" onclick="dodge()">Không bao giờ</button>
+  </div>
+
+  <script>
+    let scale = 1;
+    function dodge() {
+      // Nút chấp nhận to dần lên
+      scale += 0.35;
+      document.getElementById('acceptBtn').style.transform = `scale(${scale})`;
+
+      // Nút từ chối nhảy ngẫu nhiên
+      const btn = document.getElementById('refuseBtn');
+      const x = (Math.random() - 0.5) * 200;
+      const y = (Math.random() - 0.5) * 200;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    function accept() {
+      document.getElementById('title').innerText = 'v là Chíp khum lạnh nhạt với tớ nx rùi nha! Cảm ơn Chíp iu đã tha lỗi 🥰tớ không thế nx đâu, hứa đấy!';
+      document.getElementById('catImg').src = 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnZ3cm0xYmt6MmFma2d5N2N6Nnhqcnkza3drcmExZG4wZmVyYnJpNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif';
+      document.querySelector('.btn-group').style.display = 'none';
+      document.querySelector('p').style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>
